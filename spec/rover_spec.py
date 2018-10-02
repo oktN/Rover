@@ -110,10 +110,6 @@ with description('Rover') as self:
         expected_position = [1, 0]
         expect(current_position).to(equal(expected_position))
 
-
-
-
-
 """
     with it('turns right'):
         given_position = [0, 0]
