@@ -22,7 +22,7 @@ with description('Rover') as self:
 
         expect(current_direction).to(equal(given_direction))
 
-    with it('moves forward'):
+    with it('moves forward facing North'):
         given_position = [0, 0]
         given_direction = 'North'
         rover = Rover(given_position, given_direction)
@@ -33,7 +33,40 @@ with description('Rover') as self:
         expected_position = [0, 1]
         expect(current_position).to(equal(expected_position))
 
-    with it('moves backwards'):
+    with it('moves forward facing South'):
+        given_position = [0, 0]
+        given_direction = 'South'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['f'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [0, -1]
+        expect(current_position).to(equal(expected_position))
+
+    with it('moves forward facing East'):
+        given_position = [0, 0]
+        given_direction = 'East'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['f'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [1, 0]
+        expect(current_position).to(equal(expected_position))
+
+    with it('moves forward facing West'):
+        given_position = [0, 0]
+        given_direction = 'West'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['f'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [-1, 0]
+        expect(current_position).to(equal(expected_position))
+
+    with it('moves backwards facing North'):
         given_position = [0, 0]
         given_direction = 'North'
         rover = Rover(given_position, given_direction)
@@ -43,6 +76,43 @@ with description('Rover') as self:
 
         expected_position = [0, -1]
         expect(current_position).to(equal(expected_position))
+
+    with it('moves backwards facing South'):
+        given_position = [0, 0]
+        given_direction = 'South'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['b'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [0, 1]
+        expect(current_position).to(equal(expected_position))
+
+    with it('moves backwards facing East'):
+        given_position = [0, 0]
+        given_direction = 'East'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['b'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [-1, 0]
+        expect(current_position).to(equal(expected_position))
+
+    with it('moves backwards Facing West'):
+        given_position = [0, 0]
+        given_direction = 'West'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['b'])
+        current_position = rover.broadcast_position()
+
+        expected_position = [1, 0]
+        expect(current_position).to(equal(expected_position))
+
+
+
+
 
 """
     with it('turns right'):
