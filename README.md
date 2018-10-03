@@ -1,10 +1,10 @@
-##MARS ROVER KATA
+## MARS ROVER KATA
 
-###CONTEXT
+### CONTEXT
 
 You’re part of the engineering team of a important space agency. Currently the agency is working in a robotic rover to explore the surface of Mars. Develop an API that translates the commands sent from earth to instructions that are understood by the rover.
 
-###REQUIREMENTS
+### REQUIREMENTS
 
 * Starts in a given initial coordinate (x, y)
 * Starts in a given initial direction (North, South, East or West)
@@ -14,7 +14,7 @@ You’re part of the engineering team of a important space agency. Currently the
 * Implements command that turn the rover left(l)
 * Implements command that turn the rover right(r)
 
-###ADVANCED
+### ADVANCED
 
 * Simulate the surface as a sphere subdivided by 144 segments in each axis. In other words, the coordinate (0, 0) is the same as (144, 144)
 
