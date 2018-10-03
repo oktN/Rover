@@ -18,6 +18,6 @@ You’re part of the engineering team of a important space agency. Currently the
 
 * Simulate the surface as a sphere subdivided by 144 segments in each axis. In other words, the coordinate (0, 0) is the same as (144, 144)
 
-###ULTRA
+### ULTRA
 
 * Implement a obstacle detection system. If a coordinate is occupied by a obstacle the rover should report its location and move to the last free location (and never get stuck again for the same reason)
