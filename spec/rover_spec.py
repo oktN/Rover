@@ -110,8 +110,29 @@ with description('Rover') as self:
         expected_position = [1, 0]
         expect(current_position).to(equal(expected_position))
 
-"""
-    with it('turns right'):
+    with it('turns right from North to East'):
+        given_position = [0, 0]
+        given_direction = 'North'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['r'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'East'
+        expect(current_direction).to(equal(expected_direction))
+
+    with it('turns right from East to South'):
+        given_position = [0, 0]
+        given_direction = 'East'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['r'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'South'
+        expect(current_direction).to(equal(expected_direction))
+
+    with it('turns right from South to West'):
         given_position = [0, 0]
         given_direction = 'South'
         rover = Rover(given_position, given_direction)
@@ -122,7 +143,40 @@ with description('Rover') as self:
         expected_direction = 'West'
         expect(current_direction).to(equal(expected_direction))
 
-    with it('turns left'):
+    with it('turns right from West to North'):
+        given_position = [0, 0]
+        given_direction = 'West'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['r'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'North'
+        expect(current_direction).to(equal(expected_direction))
+
+    with it('turns left from North to West'):
+        given_position = [0, 0]
+        given_direction = 'North'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['l'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'West'
+        expect(current_direction).to(equal(expected_direction))
+
+    with it('turns left from West to South'):
+        given_position = [0, 0]
+        given_direction = 'West'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['l'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'South'
+        expect(current_direction).to(equal(expected_direction))
+
+    with it('turns left from South to East'):
         given_position = [0, 0]
         given_direction = 'South'
         rover = Rover(given_position, given_direction)
@@ -132,4 +186,14 @@ with description('Rover') as self:
         current_direction = rover.broadcast_direction()
         expected_direction = 'East'
         expect(current_direction).to(equal(expected_direction))
-"""
+
+    with it('turns left from West to North'):
+        given_position = [0, 0]
+        given_direction = 'East'
+        rover = Rover(given_position, given_direction)
+
+        rover.command(['l'])
+
+        current_direction = rover.broadcast_direction()
+        expected_direction = 'North'
+        expect(current_direction).to(equal(expected_direction))
